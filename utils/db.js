@@ -17,6 +17,12 @@ import 'dotenv/config';
     isAlive() {
         return this.client.isConnected();
     }
+    async nbUsers(){
+        return await this.client.db.collection('users').countDocuments()
+    }
+    async nbFiles(){
+
+    }
 }
 
 export default new dbClient;
